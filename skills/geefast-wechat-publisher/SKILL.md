@@ -16,6 +16,20 @@ description: Use when turning a verified remote-sensing download experiment into
 5. 生成 Markdown 草稿、素材目录和封面提示词，图片文字使用简体中文。
 6. 发布前扫描本机路径、用户名、项目号、token、OAuth、虚拟环境路径和私密数据。
 
+## WeChatPub 实际执行链路（Windows）
+
+公众号文章不能只停留在 Markdown。标准交付链路是：
+
+1. 复制参考文章和素材到工作区，不修改用户原始公众号项目目录。
+2. 运行 `zh_punctuation_fix.py --write`，修复中文正文半角标点。
+3. 使用 `format.py --input ... --theme interview --output ... --no-open` 生成 `article.html`、`preview.html` 和 `images/`。
+4. 检查 HTML：图片引用存在、样式内联、无 `<script>`、无外链 CSS、无本机绝对路径。
+5. 准备 1:1 PNG 封面；正文图片和封面都必须是本地文件。
+6. 使用 `publish.py --dir ... --cover ... --title ... --author ... --yes` 上传到微信公众号草稿箱。
+7. 只验证草稿创建成功，最后由用户在公众号后台检查并点击发布；禁止脚本群发。
+
+新版 WeChatPub 配置优先读取 `WECHATPUB_CONFIG`，其次是 `~/.wechatpub/config.json`。凭据只读使用，绝不复制进 Git、文章目录或日志。若发布失败，保留脱敏日志并优先检查公众号 IP 白名单、草稿箱接口权限和封面图。
+
 ## 写作边界
 
 - 可以写“昆明单景完整下载实测 4.69 秒”。
