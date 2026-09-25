@@ -213,6 +213,7 @@ def main() -> None:
                    dtype=dtype, crs=output_crs,
                    transform=rasterio.Affine(*affine),
                    compress="deflate", predictor=2, tiled=True,
+                   BIGTIFF="YES",
                    blockxsize=256, blockysize=256)
     done = 0
     started = time.perf_counter()

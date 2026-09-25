@@ -26,6 +26,7 @@ description: Use when a user needs Google Earth Engine remote-sensing imagery do
 1. 使用影像原生投影和原生网格，避免全球数据无谓重投影到 EPSG:4326。
 2. 使用 `--auto-tile`，按 45 MiB 安全预算并为掩膜/编码开销预留空间。
 3. 请求使用 `GEO_TIFF`，返回后直接写入本地 tiled GeoTIFF，避免 NumPy 结构化转换。
+   全球或超过 4 GB 的结果必须启用 BigTIFF，避免经典 TIFF 在本地写盘阶段失败。
 4. 单景下载优先尝试 20~32 并发；高容量端点适合大量并行请求，但必须以实际测速为准。
 5. 显示已完成瓦片数、百分比、已用时间、文件大小和预计剩余时间。
 6. 最终报告区分“已实测”“当前进度”和“估算目标”，不把估算写成完成结果。
