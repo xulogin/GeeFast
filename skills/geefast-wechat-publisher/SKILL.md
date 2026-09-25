@@ -30,6 +30,8 @@ description: Use when turning a verified remote-sensing download experiment into
 
 新版 WeChatPub 配置优先读取 `WECHATPUB_CONFIG`，其次是 `~/.wechatpub/config.json`。凭据只读使用，绝不复制进 Git、文章目录或日志。若发布失败，保留脱敏日志并优先检查公众号 IP 白名单、草稿箱接口权限和封面图。
 
+完整可复用的内容生产、配图、封面安全区和主题选择规范见 [references/公众号制作管线与模板选择.md](references/公众号制作管线与模板选择.md)。
+
 ## 写作边界
 
 - 可以写“昆明单景完整下载实测 4.69 秒”。
