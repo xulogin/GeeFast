@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+credentials*
+token*
+*.tif
+*.tiff
+test_output/
+公众号草稿/素材/

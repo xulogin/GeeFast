@@ -1,0 +1,19 @@
+{
+  "name": "geefast",
+  "version": "0.1.0",
+  "description": "高速、合规地把 Google Earth Engine 遥感影像下载到本地，并支持公众号技术文章产出。",
+  "author": { "name": "xulogin", "url": "https://github.com/xulogin" },
+  "homepage": "https://github.com/xulogin/GeeFast",
+  "repository": "https://github.com/xulogin/GeeFast",
+  "license": "MIT",
+  "keywords": ["gee", "google-earth-engine", "remote-sensing", "download"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "GeeFast",
+    "shortDescription": "高速下载 GEE 遥感影像并整理技术成果",
+    "defaultPrompt": [
+      "把这幅 GEE 遥感影像高速下载到本地，自动选择最快方案并显示进度。",
+      "帮我把这个 GEE 下载实验整理成公众号推文并生成配图。"
+    ]
+  }
+}
