@@ -13,8 +13,19 @@ import concurrent.futures as futures
 import math
 import os
 import random
+import sys
 import time
 from pathlib import Path
+
+
+# Windows PowerShell 可能以 GBK 接收子进程输出；统一使用 UTF-8，避免中文
+# 进度和错误信息显示为乱码。不会改变请求、瓦片或写盘逻辑。
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        try:
+            _stream.reconfigure(encoding="utf-8")
+        except (OSError, ValueError):
+            pass
 
 
 def parse_args() -> argparse.Namespace:
