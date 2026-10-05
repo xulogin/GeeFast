@@ -1,0 +1,12 @@
+{
+  "name": "geefast",
+  "owner": { "name": "xulogin" },
+  "plugins": [
+    {
+      "name": "geefast",
+      "source": "./",
+      "description": "把 GEE 影像高速下载到本地 GeoTIFF：走原生 getPixels/computePixels，合法切块 + 并发，不靠多账号规避配额",
+      "version": "0.1.0"
+    }
+  ]
+}
