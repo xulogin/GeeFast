@@ -1,3 +1,5 @@
 earthengine-api
 rasterio
 geedim
+tifffile
+imagecodecs
